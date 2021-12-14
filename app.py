@@ -6,7 +6,6 @@ app = Flask(__name__)
 def trans():
     if request.method == 'POST':
         translator = Translator(to_lang='ru')
-        result = ''
         result = request.form['text_for_trans']
         result = translator.translate(result)
         return render_template("index.html", text_after_trans=result)
